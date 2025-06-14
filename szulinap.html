@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Boldog 70. születésnapot!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('/licorne-criniere-violette-oreilles-roses-vole-travers-ciel_929511-54.avif'); /* Unikornisos háttérkép */
+      background-size: cover;
+      background-position: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #fff;
+      text-shadow: 3px 3px 6px #000;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Boldog 70. születésnapot! 🎉</h1>
+
+  <!-- Confetti JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    function launchConfetti() {
+      const defaults = { 
+        startVelocity: 25,
+        spread: 360,
+        ticks: 60,
+        zIndex: 0
+      };
+
+      function randomInRange(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      setInterval(() => {
+        confetti(Object.assign({}, defaults, {
+          particleCount: 40,
+          origin: {
+            x: randomInRange(0.1, 0.9),
+            y: Math.random() * 0.5
+          }
+        }));
+      }, 500); // 500ms-enként új konfetti
+    }
+
+    window.onload = launchConfetti;
+  </script>
+</body>
+</html>
